@@ -25,7 +25,10 @@ jobs:
     if: github.event_name == 'push' || github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history, GitVersion requires
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
@@ -47,7 +50,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: build-test
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history, GitVersion requires
 
       # GitVersion setup
       - name: Install GitVersion
@@ -55,7 +61,7 @@ jobs:
         with:
           versionSpec: '6.4.0'
 
-      - name: Calculate version
+      - name: Generate version
         id: gitversion
         uses: GitTools/actions/gitversion/execute@v0.9.14
         with:
