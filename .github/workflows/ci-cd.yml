@@ -11,7 +11,7 @@ on:
 jobs:
   # --------- Feature / other branches ---------
   build-test:
-    if: github.event_name == 'push' && github.ref != 'refs/heads/main' || github.event_name == 'pull_request'
+    if: github.ref != 'refs/heads/main' || github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
