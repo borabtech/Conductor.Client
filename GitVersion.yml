@@ -16,4 +16,3 @@ branches:
 ignore:
   sha: []
 commit-message-incrementing: Enabled
-merge-message-strategy: MergeMessage
