@@ -2,7 +2,6 @@ mode: ContinuousDelivery
 branches:
   main:
     increment: Patch
-    prevent-increment-of-merged-branch-version: true
   feat:
     regex: ^feat
     increment: Minor
