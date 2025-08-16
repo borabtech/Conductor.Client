@@ -53,7 +53,7 @@ jobs:
       - name: Install GitVersion
         uses: GitTools/actions/gitversion/setup@v0.9.14
         with:
-          version: '6.15.0'
+          versionSpec: '6.15.0'
 
       - name: Calculate version
         id: gitversion
