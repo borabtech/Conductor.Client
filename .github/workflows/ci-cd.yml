@@ -81,6 +81,7 @@ jobs:
       - name: Pack
         run: |
           echo "GitVersion.FullSemVer=${{ steps.gitversion.outputs.FullSemVer }}"
+          echo "NuGetVersion: ${{ steps.gitversion.outputs.NuGetVersionV2 }}"
           dotnet pack -c Release -p:PackageVersion=${{ steps.gitversion.outputs.NuGetVersionV2 }} -o ./artifacts
 
       - name: List artifacts
