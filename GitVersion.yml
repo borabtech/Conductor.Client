@@ -16,3 +16,11 @@ branches:
 ignore:
   sha: []
 commit-message-incrementing: Enabled
+# Commit message rules
+commit-message-increments:
+  Major:
+    regex: 'BREAKING[ -]CHANGE'
+  Minor:
+    regex: '^feat(\(.+\))?:'
+  Patch:
+    regex: '^fix(\(.+\))?:'
