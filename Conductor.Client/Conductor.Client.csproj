@@ -6,6 +6,10 @@
     <Nullable>enable</Nullable>
 	<Version>0.0.0-alpha-1</Version>
 	<FileVersion>0.0.0.1</FileVersion>
+	<PackageId>Conductor.Client</PackageId>
+	<Authors>borab</Authors>
+	<RepositoryUrl>https://github.com/borabtech/Conductor.Client</RepositoryUrl>
+	<PackageProjectUrl>https://github.com/borabtech/Conductor.Client</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
