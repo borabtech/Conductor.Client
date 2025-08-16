@@ -1,0 +1,20 @@
+mode: ContinuousDelivery
+branches:
+  main:
+    increment: Patch
+    prevent-increment-of-merged-branch-version: true
+  feat:
+    regex: ^feat
+    increment: Minor
+    is-source-branch-for: ['main']
+  fix:
+    regex: ^fix
+    increment: Patch
+    is-source-branch-for: ['main']
+  hotfix:
+    regex: ^hotfix
+    increment: Patch
+ignore:
+  sha: []
+commit-message-incrementing: Enabled
+merge-message-strategy: MergeMessage
