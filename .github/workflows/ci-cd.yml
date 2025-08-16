@@ -59,7 +59,7 @@ jobs:
       - name: Install GitVersion
         uses: GitTools/actions/gitversion/setup@v0.9.14
         with:
-          versionSpec: '6.4.0'
+          versionSpec: '7.x'
 
       - name: Generate version
         id: gitversion
