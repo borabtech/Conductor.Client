@@ -88,6 +88,4 @@ jobs:
         run: ls -la ./artifacts
 
       - name: Publish
-        run: dotnet nuget push ./artifacts/*.nupkg \
-              --source "github" \
-              --api-key ${{ secrets.GH_PACKAGES_TOKEN }}
+        run: dotnet nuget push ./artifacts/*.nupkg --source "github" --api-key ${{ secrets.GH_PACKAGES_TOKEN }}
