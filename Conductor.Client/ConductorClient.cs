@@ -1,5 +1,4 @@
 ﻿using Conductor.Client.Models;
-using Conductor.Client.Utility;
 using Conductor.Definition;
 using Conductor.Executor;
 using Microsoft.Extensions.Logging;
@@ -39,11 +38,18 @@ public class ConductorClient : IConductorClient
             {
                 var reader = new StreamReader(definitionFile, Encoding.UTF8);
                 string jsonDefinition = await reader.ReadToEndAsync().ConfigureAwait(false);
-                ConductorWorkflow workflowDefinition = JsonSerializer.Deserialize<ConductorWorkflow>(jsonDefinition);
+
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+                options.Converters.Clear();
+                ConductorWorkflow workflowDefinition = JsonSerializer.Deserialize<ConductorWorkflow>(jsonDefinition, options);
+
                 workflowExecutor.RegisterWorkflow(workflowDefinition, true);
                 wfRegistered++;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 wfFailed++;
                 _logger.LogError("Upload failed for {filename}. Error : {ex}", definitionFile, ex);
