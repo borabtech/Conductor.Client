@@ -1,4 +1,5 @@
-mode: ContinuousDeployment
+﻿mode: ContinuousDeployment
+
 branches:
   main:
     increment: Patch
@@ -17,10 +18,10 @@ ignore:
   sha: []
 commit-message-incrementing: Enabled
 # Commit message rules
-commit-message-increments:
-  Major:
-    regex: 'BREAKING[ -]CHANGE'
-  Minor:
-    regex: '^feat(\(.+\))?:'
-  Patch:
-    regex: '^fix(\(.+\))?:'
+
+# Major, Minor, Patch regex patterns
+# (?i) => case-insensitive
+major-version-bump-message: '(?i)(BREAKING[ -]CHANGES?:)|\+semver:\s?(breaking|major)'
+minor-version-bump-message: '(?i)(^feat(\(.+\))?:)|\+semver:\s?(feature|minor)'
+patch-version-bump-message: '(?i)(^fix(\(.+\))?:)|\+semver:\s?(fix|patch)'
+no-bump-message: '(?i)\+semver:\s?(none|skip)'
