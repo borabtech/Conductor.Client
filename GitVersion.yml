@@ -16,12 +16,12 @@ branches:
     increment: Patch
 ignore:
   sha: []
-commit-message-incrementing: Enabled
+commit-message-incrementing: MergeMessageOnly
 # Commit message rules
 
 # Major, Minor, Patch regex patterns
 # (?i) => case-insensitive
-major-version-bump-message: '(?i)(BREAKING[ -]CHANGES?:)|\+semver:\s?(breaking|major)'
+major-version-bump-message: '(?i)(BREAKING[ -]CHANGE?:)|\+semver:\s?(breaking|major)'
 minor-version-bump-message: '(?i)(^(feat|feature)(\(.+\))?:)|\+semver:\s?(feature|minor)'
 patch-version-bump-message: '(?i)(^(fix|hotfix)(\(.+\))?:)|\+semver:\s?(fix|patch)'
 no-bump-message: '(?i)\+semver:\s?(none|skip)'
