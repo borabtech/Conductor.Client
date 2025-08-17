@@ -44,7 +44,9 @@ public class ConductorClient : IConductorClient
                     PropertyNameCaseInsensitive = true
                 };
                 options.Converters.Clear();
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 ConductorWorkflow workflowDefinition = JsonSerializer.Deserialize<ConductorWorkflow>(jsonDefinition, options);
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 
                 workflowExecutor.RegisterWorkflow(workflowDefinition, true);
                 wfRegistered++;
