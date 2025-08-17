@@ -1,27 +1,10 @@
 ﻿mode: ContinuousDeployment
 
-branches:
-  main:
-    increment: Patch
-  feat:
-    regex: ^feat
-    increment: Minor
-    is-source-branch-for: ['main']
-  fix:
-    regex: ^fix
-    increment: Patch
-    is-source-branch-for: ['main']
-  hotfix:
-    regex: ^hotfix
-    increment: Patch
-ignore:
-  sha: []
 commit-message-incrementing: MergeMessageOnly
-# Commit message rules
 
-# Major, Minor, Patch regex patterns
-# (?i) => case-insensitive
 major-version-bump-message: '(?i)(BREAKING[ -]CHANGE?:)|\+semver:\s?(breaking|major)'
 minor-version-bump-message: '(?i)(^(feat|feature)(\(.+\))?:)|\+semver:\s?(feature|minor)'
 patch-version-bump-message: '(?i)(^(fix|hotfix)(\(.+\))?:)|\+semver:\s?(fix|patch)'
 no-bump-message: '(?i)\+semver:\s?(none|skip)'
+# Major, Minor, Patch regex patterns
+# (?i) => case-insensitive
