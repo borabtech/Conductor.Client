@@ -96,7 +96,7 @@ jobs:
       - name: Create Git tag
         if: success()
         env:
-          GH_PAT: ${{ secrets.GH_PACKAGES_TOKEN }}
+          GH_PAT: ${{ secrets.GH_AUTH_TOKEN }}
         run: |
           TAG=${{ steps.gitversion.outputs.FullSemVer }}
           
